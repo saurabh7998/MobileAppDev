@@ -3,6 +3,14 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        SigningConfig1 {
+            storeFile file('/Users/saurabhg/Documents/SGKeyStore/SGKeystore')
+            storePassword 'root45'
+            keyAlias 'MyApp'
+            keyPassword 'root45'
+        }
+    }
     compileSdk 31
 
     defaultConfig {
