@@ -7,7 +7,6 @@
     tools:context=".GridActivity">
 
 
-
     <Button
         android:id="@+id/btnA"
         android:layout_width="wrap_content"
@@ -87,6 +86,8 @@
         android:layout_width="326dp"
         android:layout_height="35dp"
         android:text="@string/PressText"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
