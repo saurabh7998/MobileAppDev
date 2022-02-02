@@ -7,4 +7,7 @@
     <string name="E">E</string>
     <string name="F">F</string>
     <string name="PressText">Pressed: - </string>
+    <string name="helloWorld">Hello World!</string>
+    <string name="aboutMe">About Me</string>
+    <string name="clicky">Clicky Clicky</string>
 </resources>
