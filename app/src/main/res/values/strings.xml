@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">NUMAD22Sp_SaurabhGade</string>
+    <string name="A">A</string>
+    <string name="B">B</string>
+    <string name="C">C</string>
+    <string name="D">D</string>
+    <string name="E">E</string>
+    <string name="F">F</string>
+    <string name="PressText">Pressed: - </string>
+    <string name="helloWorld">Hello World!</string>
+    <string name="aboutMe">About Me</string>
+    <string name="clicky">Clicky Clicky</string>
 </resources>

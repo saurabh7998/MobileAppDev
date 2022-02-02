@@ -3,6 +3,7 @@ package edu.neu.madcourse.numad22sp_saurabhgade;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,6 +12,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     private Button aboutMeBtn;
+    private Button clickyBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         aboutMeBtn = findViewById(R.id.button);
+        clickyBtn = findViewById(R.id.clickyBtn);
 
         aboutMeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -30,5 +33,17 @@ public class MainActivity extends AppCompatActivity {
                 toast.show();
             }
         });
+
+        clickyBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToGridActivity(v);
+            }
+        });
+    }
+
+    public void goToGridActivity(View view){
+        Intent intent = new Intent(this, GridActivity.class);
+        startActivity(intent);
     }
 }

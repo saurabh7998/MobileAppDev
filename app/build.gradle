@@ -5,10 +5,10 @@ plugins {
 android {
     signingConfigs {
         SigningConfig1 {
-            storeFile file('/Users/saurabhg/Documents/SGKeyStore/SGKeystore')
-            storePassword 'root45'
-            keyAlias 'MyApp'
-            keyPassword 'root45'
+            storeFile file(var4)
+            storePassword var3
+            keyAlias var2
+            keyPassword var1
         }
     }
     compileSdk 31
