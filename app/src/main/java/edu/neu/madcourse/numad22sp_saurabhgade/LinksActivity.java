@@ -18,7 +18,7 @@ import java.util.Map;
 
 import edu.neu.madcourse.numad22sp_saurabhgade.adapter.RecyclerViewAdapter;
 
-public class LinksActivity extends AppCompatActivity {
+public class LinksActivity extends AppCompatActivity implements InputDialog.InputDialogListener {
 
     private FloatingActionButton addItemBtn;
     private RecyclerView recyclerView;
@@ -50,7 +50,7 @@ public class LinksActivity extends AppCompatActivity {
 //                        .setTitle(R.string.dialog_title);
 //                AlertDialog dialog = alertDialogBuilder.create();
 //                alertDialogBuilder.show();
-                
+                openDialog();
             }
         });
 
@@ -58,5 +58,15 @@ public class LinksActivity extends AppCompatActivity {
         recyclerView.setAdapter(recyclerViewAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+    }
+
+    public void openDialog(){
+        InputDialog inputDialog = new InputDialog();
+        inputDialog.show(getSupportFragmentManager(),"input dialog");
+    }
+
+    @Override
+    public void applyTexts(String url) {
+        urlList.add(url);
     }
 }
