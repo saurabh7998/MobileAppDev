@@ -12,4 +12,10 @@
     <string name="clicky">Clicky Clicky</string>
     <string name="myName">Saurabh Gade</string>
     <string name="myEmail">gade.sau@northeastern.edu</string>
+    <string name="linkCollectorBtnText">Link Collector</string>
+    <string name="todo">addItem</string>
+    <string name="dialog_message">Hello</string>
+    <string name="dialog_title">Test</string>
+
+
 </resources>
