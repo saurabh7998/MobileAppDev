@@ -25,12 +25,15 @@ public class MainActivity extends AppCompatActivity {
         aboutMeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                /*
                 Context context = getApplicationContext();
                 CharSequence text = "Saurabh, gade.sau@northeastern.edu";
                 int duration = Toast.LENGTH_SHORT;
 
                 Toast toast = Toast.makeText(context, text, duration);
                 toast.show();
+                 */
+                goToAboutMeActivity(v);
             }
         });
 
@@ -44,6 +47,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void goToGridActivity(View view){
         Intent intent = new Intent(this, GridActivity.class);
+        startActivity(intent);
+    }
+
+    public void goToAboutMeActivity(View view){
+        Intent intent = new Intent(this, AboutMeActivity.class);
         startActivity(intent);
     }
 }

@@ -10,4 +10,6 @@
     <string name="helloWorld">Hello World!</string>
     <string name="aboutMe">About Me</string>
     <string name="clicky">Clicky Clicky</string>
+    <string name="myName">Saurabh Gade</string>
+    <string name="myEmail">gade.sau@northeastern.edu</string>
 </resources>
