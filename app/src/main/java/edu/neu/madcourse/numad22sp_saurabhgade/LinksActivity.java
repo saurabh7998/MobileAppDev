@@ -1,6 +1,5 @@
 package edu.neu.madcourse.numad22sp_saurabhgade;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -8,7 +7,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -26,6 +24,7 @@ public class LinksActivity extends AppCompatActivity implements InputDialog.Inpu
     private RecyclerView.LayoutManager rLayoutManger;
     private Map<String, String> urlMap;
     private List<String> urlList;
+    private List<String> urlNameList;
 
 
     @Override
@@ -37,8 +36,11 @@ public class LinksActivity extends AppCompatActivity implements InputDialog.Inpu
 
         addItemBtn = findViewById(R.id.addItemBtn);
         urlList = new ArrayList<>();
+        urlNameList = new ArrayList<>();
         urlList.add("Hello");
         urlList.add("world");
+        urlNameList.add("H");
+        urlNameList.add("W");
 
         recyclerView = findViewById(R.id.recyclerView);
 
@@ -51,10 +53,11 @@ public class LinksActivity extends AppCompatActivity implements InputDialog.Inpu
 //                AlertDialog dialog = alertDialogBuilder.create();
 //                alertDialogBuilder.show();
                 openDialog();
+
             }
         });
 
-        recyclerViewAdapter = new RecyclerViewAdapter(LinksActivity.this, urlList);
+        recyclerViewAdapter = new RecyclerViewAdapter(LinksActivity.this, urlList,urlNameList);
         recyclerView.setAdapter(recyclerViewAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -66,7 +69,8 @@ public class LinksActivity extends AppCompatActivity implements InputDialog.Inpu
     }
 
     @Override
-    public void applyTexts(String url) {
+    public void applyTexts(String url, String urlName) {
         urlList.add(url);
+        urlNameList.add(urlName);
     }
 }

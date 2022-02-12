@@ -9,7 +9,6 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
@@ -19,12 +18,14 @@ import edu.neu.madcourse.numad22sp_saurabhgade.R;
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>  {
 
     private Context context;
-    private List<String> stringList;
+    private List<String> urlList;
+    private List<String> urlNameList;
 
 
-    public RecyclerViewAdapter(Context context, List<String> stringList) {
+    public RecyclerViewAdapter(Context context, List<String> urlList, List<String> urlNameList) {
         this.context  = context;
-        this.stringList = stringList;
+        this.urlList = urlList;
+        this.urlNameList = urlNameList;
     }
 
 
@@ -39,29 +40,34 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     //What will happen after we create viewholder object
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        String url = stringList.get(position);
-        holder.urlName.setText(url);
+        String url = urlList.get(position);
+        String urlName = urlNameList.get(position);
+        holder.link.setText(url);
+        holder.urlName.setText(urlName);
     }
 
     //How many items?
     @Override
     public int getItemCount() {
-        return stringList.size();
+        return urlList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
+        public TextView link;
         public TextView urlName;
         CardView layoutx;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             //itemView.setOnClickListener(this);
-            this.urlName = itemView.findViewById(R.id.urlTextView);
+            this.link = itemView.findViewById(R.id.urlTextView);
+            this.urlName = itemView.findViewById(R.id.urlNameTextView);
             this.layoutx = itemView.findViewById(R.id.layoutx);
         }
 
         @Override
         public void onClick(View v) {
+
             Toast toast = Toast.makeText(context.getApplicationContext(), "text", Toast.LENGTH_SHORT);
         }
     }
