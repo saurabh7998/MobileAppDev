@@ -3,9 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="85dp"
+    app:cardCornerRadius="8dp"
+    android:layout_marginBottom="4dp"
+    android:layout_marginTop="4dp"
+    android:backgroundTint="@color/cardview_shadow_start_color"
+    android:backgroundTintMode="add"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
     android:id="@+id/layoutx">
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -16,6 +22,10 @@
             android:layout_width="182dp"
             android:layout_height="48dp"
             android:clickable="true"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textAlignment="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.93"
@@ -27,6 +37,10 @@
             android:id="@+id/urlNameTextView"
             android:layout_width="182dp"
             android:layout_height="48dp"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textAlignment="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/urlTextView"
             app:layout_constraintStart_toStartOf="parent"
