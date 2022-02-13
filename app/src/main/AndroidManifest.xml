@@ -9,6 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_sg_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NUMAD22Sp_SaurabhGade">
+
+
         <activity
             android:name=".LinksActivity"
             android:exported="false" />

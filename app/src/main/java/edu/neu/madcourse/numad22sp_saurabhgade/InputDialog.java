@@ -64,25 +64,28 @@ public class InputDialog extends AppCompatDialogFragment {
             }
         });
 
-        builder.setView(view).setTitle("Add URL").setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
+        builder.setView(view)
+                .setTitle("Add URL")
+                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
 
-            }
-        }).setPositiveButton("OK", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                if(invalidUrlFlag){
-                    Toast.makeText(getContext(),"Cannot add the url",Toast.LENGTH_SHORT).show();
-                }else {
-                    String editUrlText = editTextUrl.getText().toString();
-                    String editUrlNameText = editTextUrlName.getText().toString();
-                    listener.applyTexts(editUrlText,editUrlNameText);
-                }
+                    }
+                })
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        if (invalidUrlFlag) {
+                            Toast.makeText(getContext(), "Cannot add the url", Toast.LENGTH_SHORT).show();
+                        } else {
+                            String editUrlText = editTextUrl.getText().toString();
+                            String editUrlNameText = editTextUrlName.getText().toString();
+                            listener.applyTexts(editUrlText, editUrlNameText);
+                        }
 
 
-            }
-        });
+                    }
+                });
 
 
         return builder.create();
@@ -92,7 +95,6 @@ public class InputDialog extends AppCompatDialogFragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-
         listener = (InputDialogListener) context;
     }
 
