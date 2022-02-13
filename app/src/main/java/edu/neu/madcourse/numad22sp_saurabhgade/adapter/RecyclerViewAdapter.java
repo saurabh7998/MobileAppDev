@@ -41,7 +41,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row, parent, false);
         tv = view.findViewById(R.id.urlTextView);
 
-        return new ViewHolder(view,mOnNoteListener);
+        return new ViewHolder(view, mOnNoteListener);
     }
 
     //What will happen after we create viewholder object
@@ -61,10 +61,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        OnNoteListener onNoteListener;
-        public TextView link;
-        public TextView urlName;
-        CardView layoutx;
+        private OnNoteListener onNoteListener;
+        private TextView link;
+        private TextView urlName;
+        private CardView layoutx;
 
         public ViewHolder(@NonNull View itemView, OnNoteListener onNoteListener) {
             super(itemView);

@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,10 +56,9 @@ public class LinksActivity extends AppCompatActivity implements InputDialog.Inpu
             }
         });
 
-        recyclerViewAdapter = new RecyclerViewAdapter(LinksActivity.this, urlList, urlNameList,this);
+        recyclerViewAdapter = new RecyclerViewAdapter(LinksActivity.this, urlList, urlNameList, this);
         recyclerView.setAdapter(recyclerViewAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
 
 
     }
@@ -78,7 +78,8 @@ public class LinksActivity extends AppCompatActivity implements InputDialog.Inpu
     public void applyTexts(String url, String urlName) {
         urlList.add(url);
         urlNameList.add(urlName);
-
+        Snackbar mySnackbar = Snackbar.make(recyclerView, urlName + " link created successfully", Snackbar.LENGTH_SHORT);
+        mySnackbar.show();
     }
 
     @Override

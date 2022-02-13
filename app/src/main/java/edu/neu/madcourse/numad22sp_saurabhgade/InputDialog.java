@@ -16,6 +16,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatDialogFragment;
 
+import com.google.android.material.snackbar.Snackbar;
+
 
 public class InputDialog extends AppCompatDialogFragment {
 
@@ -81,6 +83,7 @@ public class InputDialog extends AppCompatDialogFragment {
                             String editUrlText = editTextUrl.getText().toString();
                             String editUrlNameText = editTextUrlName.getText().toString();
                             listener.applyTexts(editUrlText, editUrlNameText);
+
                         }
 
 
