@@ -1,6 +1,8 @@
 package edu.neu.madcourse.numad22sp_saurabhgade;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -57,6 +59,7 @@ public class LinksActivity extends AppCompatActivity implements InputDialog.Inpu
         });
 
         recyclerViewAdapter = new RecyclerViewAdapter(LinksActivity.this, urlList, urlNameList, this);
+        new ItemTouchHelper(itemTouchHelperCallback).attachToRecyclerView(recyclerView);
         recyclerView.setAdapter(recyclerViewAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -94,4 +97,19 @@ public class LinksActivity extends AppCompatActivity implements InputDialog.Inpu
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
         startActivity(intent);
     }
+
+    ItemTouchHelper.SimpleCallback itemTouchHelperCallback = new ItemTouchHelper.SimpleCallback(
+            0, ItemTouchHelper.RIGHT | ItemTouchHelper.LEFT) {
+        @Override
+        public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView
+                .ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+            return false;
+        }
+
+        @Override
+        public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+            urlList.remove(viewHolder.getAdapterPosition());
+            recyclerViewAdapter.notifyDataSetChanged();
+        }
+    };
 }

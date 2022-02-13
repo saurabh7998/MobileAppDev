@@ -16,6 +16,8 @@
     <string name="todo">addItem</string>
     <string name="dialog_message">Hello</string>
     <string name="dialog_title">Test</string>
+    <string name="link">Link</string>
+    <string name="url_name">URL Name</string>
 
 
 </resources>
