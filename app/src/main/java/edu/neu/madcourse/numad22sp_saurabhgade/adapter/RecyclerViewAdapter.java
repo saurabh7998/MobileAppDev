@@ -22,7 +22,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     private Context context;
     private List<String> urlList;
     private List<String> urlNameList;
-    private TextView tv;
     private OnNoteListener mOnNoteListener;
 
 
@@ -39,7 +38,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public RecyclerViewAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row, parent, false);
-        tv = view.findViewById(R.id.urlTextView);
+
 
         return new ViewHolder(view, mOnNoteListener);
     }
@@ -77,15 +76,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         @Override
         public void onClick(View v) {
-            //goToURL(link.toString());
             onNoteListener.onNoteClick(getAdapterPosition());
             Toast toast = Toast.makeText(context.getApplicationContext(), "text", Toast.LENGTH_SHORT);
-        }
-
-
-        public void goToURL(String link) {
-            Uri uri = Uri.parse(link);
-            itemView.getContext().startActivity(new Intent(Intent.ACTION_VIEW, uri));
         }
 
     }

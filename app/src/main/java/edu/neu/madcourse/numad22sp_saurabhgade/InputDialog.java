@@ -48,11 +48,8 @@ public class InputDialog extends AppCompatDialogFragment {
             // whenever text size changes it will check
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                // if text written matches the pattern then
-                // it will show a toast of pattern matches
                 if (Patterns.WEB_URL.matcher(editTextUrl.getText().toString()).matches()) {
                     invalidUrlFlag = false;
-                    //Toast.makeText(getContext(), "Valid URL", Toast.LENGTH_SHORT).show();
                 } else {
                     // otherwise show error of invalid url
                     editTextUrl.setError("Invalid URL");
@@ -83,7 +80,6 @@ public class InputDialog extends AppCompatDialogFragment {
                             String editUrlText = editTextUrl.getText().toString();
                             String editUrlNameText = editTextUrlName.getText().toString();
                             listener.applyTexts(editUrlText, editUrlNameText);
-
                         }
 
 

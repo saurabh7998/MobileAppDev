@@ -5,38 +5,32 @@
     android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
     android:padding="50dp">
 
 
     <EditText
         android:id="@+id/editTextUrl"
-        android:layout_width="588dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="98dp"
-        android:layout_marginEnd="49dp"
+        android:layout_width="500dp"
+        android:layout_height="35dp"
         android:autofillHints=""
         android:hint="@string/link"
         android:inputType="text"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextUrlName"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextUrlName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginEnd="49dp"
-        android:layout_marginBottom="126dp"
+        android:layout_width="552dp"
+        android:layout_height="25dp"
         android:hint="@string/url_name"
         android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextUrl" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

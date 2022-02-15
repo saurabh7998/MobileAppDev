@@ -10,7 +10,6 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -30,7 +29,6 @@ public class LinksActivity extends AppCompatActivity implements InputDialog.Inpu
 
     private List<String> urlList;
     private List<String> urlNameList;
-    private TextView tv;
 
 
     @Override
@@ -38,16 +36,14 @@ public class LinksActivity extends AppCompatActivity implements InputDialog.Inpu
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_links);
 
-        Intent intent = getIntent();
-
         addItemBtn = findViewById(R.id.addItemBtn);
 
         urlList = new ArrayList<>();
         urlNameList = new ArrayList<>();
-        urlList.add("Hello");
-        urlList.add("world");
-        urlNameList.add("H");
-        urlNameList.add("W");
+//        urlList.add("Hello");
+//        urlList.add("world");
+//        urlNameList.add("H");
+//        urlNameList.add("W");
 
         recyclerView = findViewById(R.id.recyclerView);
 
@@ -66,23 +62,17 @@ public class LinksActivity extends AppCompatActivity implements InputDialog.Inpu
 
     }
 
-    public void openDialog() {
+    private void openDialog() {
         InputDialog inputDialog = new InputDialog();
         inputDialog.show(getSupportFragmentManager(), "input dialog");
     }
-
-    public void goToURL(String link) {
-        Uri uri = Uri.parse(link);
-        startActivity(new Intent(Intent.ACTION_VIEW, uri));
-    }
-
 
     @Override
     public void applyTexts(String url, String urlName) {
         urlList.add(url);
         urlNameList.add(urlName);
-        Snackbar mySnackbar = Snackbar.make(recyclerView, urlName + " link created successfully", Snackbar.LENGTH_SHORT);
-        mySnackbar.show();
+        Snackbar linkCreatedSnackbar = Snackbar.make(recyclerView, urlName + " link created successfully", Snackbar.LENGTH_SHORT);
+        linkCreatedSnackbar.show();
     }
 
     @Override
@@ -94,8 +84,7 @@ public class LinksActivity extends AppCompatActivity implements InputDialog.Inpu
         if (!url.startsWith("http") && !url.startsWith("https")) {
             url = "http://" + url;
         }
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-        startActivity(intent);
+        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
     }
 
     ItemTouchHelper.SimpleCallback itemTouchHelperCallback = new ItemTouchHelper.SimpleCallback(
@@ -109,6 +98,7 @@ public class LinksActivity extends AppCompatActivity implements InputDialog.Inpu
         @Override
         public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
             urlList.remove(viewHolder.getAdapterPosition());
+            urlNameList.remove(viewHolder.getAdapterPosition());
             recyclerViewAdapter.notifyDataSetChanged();
         }
     };
