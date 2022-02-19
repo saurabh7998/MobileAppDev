@@ -9,11 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_sg_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NUMAD22Sp_SaurabhGade">
-
-
         <activity
-            android:name=".LinksActivity" android:configChanges="orientation|screenSize|keyboardHidden"
-
+            android:name=".LocationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LinksActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
             android:exported="false" />
         <activity
             android:name=".AboutMeActivity"

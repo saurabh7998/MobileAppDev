@@ -19,11 +19,9 @@ public class MainActivity extends AppCompatActivity {
 
     private Button aboutMeBtn;
     private Button clickyBtn;
-    private  Button linkCollectorBtn;
+    private Button linkCollectorBtn;
+    private Button locationBtn;
 
-//    private RecyclerView recyclerView;
-//    private RecyclerViewAdapter recyclerViewAdapter;
-//    private Map<String, String> urlMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
         aboutMeBtn = findViewById(R.id.button);
         clickyBtn = findViewById(R.id.clickyBtn);
         linkCollectorBtn = findViewById(R.id.linkBtn);
+        locationBtn = findViewById(R.id.locationBtn);
+
         //urlMap = new HashMap<>();
 
         aboutMeBtn.setOnClickListener(new View.OnClickListener() {
@@ -63,20 +63,32 @@ public class MainActivity extends AppCompatActivity {
                 goToLinksActivity(v);
             }
         });
+
+        locationBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToLocationActivity(v);
+            }
+        });
     }
 
-    public void goToGridActivity(View view){
+    public void goToGridActivity(View view) {
         Intent intent = new Intent(this, GridActivity.class);
         startActivity(intent);
     }
 
-    public void goToAboutMeActivity(View view){
+    public void goToAboutMeActivity(View view) {
         Intent intent = new Intent(this, AboutMeActivity.class);
         startActivity(intent);
     }
 
-    public void goToLinksActivity(View view){
+    public void goToLinksActivity(View view) {
         Intent intent = new Intent(this, LinksActivity.class);
+        startActivity(intent);
+    }
+
+    public void goToLocationActivity(View view) {
+        Intent intent = new Intent(this, LocationActivity.class);
         startActivity(intent);
     }
 }

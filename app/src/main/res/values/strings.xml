@@ -18,6 +18,8 @@
     <string name="dialog_title">Test</string>
     <string name="link">Link</string>
     <string name="url_name">URL Name</string>
+    <string name="locationBtn">Get Location</string>
+    <string name="NULogo">NU Logo</string>
 
 
 </resources>
