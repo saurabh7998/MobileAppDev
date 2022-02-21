@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bgColor"
     tools:context=".GridActivity">
 
 
@@ -13,6 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="96dp"
         android:text="@string/A"
+        android:textColor="@color/textColor"
         app:layout_constraintBottom_toTopOf="@+id/btnD"
         app:layout_constraintEnd_toStartOf="@+id/btnB"
         app:layout_constraintTop_toTopOf="parent"
@@ -24,6 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="92dp"
         android:text="@string/B"
+        android:textColor="@color/textColor"
         app:layout_constraintBottom_toTopOf="@+id/btnE"
         app:layout_constraintEnd_toStartOf="@+id/btnC"
         app:layout_constraintTop_toTopOf="parent"
@@ -35,6 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="132dp"
         android:text="@string/C"
+        android:textColor="@color/textColor"
         app:layout_constraintBottom_toTopOf="@+id/btnF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -47,6 +51,7 @@
         android:layout_marginEnd="96dp"
         android:layout_marginBottom="32dp"
         android:text="@string/D"
+        android:textColor="@color/textColor"
         app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toStartOf="@+id/btnE" />
 
@@ -57,6 +62,7 @@
         android:layout_marginEnd="92dp"
         android:layout_marginBottom="32dp"
         android:text="@string/E"
+        android:textColor="@color/textColor"
         app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toStartOf="@+id/btnF" />
 
@@ -67,6 +73,7 @@
         android:layout_marginEnd="132dp"
         android:layout_marginBottom="32dp"
         android:text="@string/F"
+        android:textColor="@color/textColor"
         app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -77,6 +84,7 @@
         android:layout_gravity="center_vertical"
         android:gravity="center_horizontal"
         android:text="@string/PressText"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.523"

@@ -24,31 +24,31 @@
         android:id="@+id/latitudeBox"
         android:layout_width="169dp"
         android:layout_height="47dp"
-        android:layout_marginEnd="36dp"
+        android:layout_marginEnd="92dp"
         android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/longitudeBox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.548" />
+        app:layout_constraintVertical_bias="0.554" />
 
     <TextView
         android:id="@+id/locationDisplayBox6"
         android:layout_width="169dp"
         android:layout_height="47dp"
-        android:layout_marginBottom="364dp"
-        android:textColor="@color/white"
+        android:layout_marginBottom="124dp"
         android:text="Longitude"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/longitudeBox"
-        app:layout_constraintHorizontal_bias="0.432"
+        app:layout_constraintHorizontal_bias="0.431"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/longitudeBox"
         android:layout_width="169dp"
         android:layout_height="47dp"
-        android:layout_marginEnd="36dp"
-        android:layout_marginBottom="364dp"
+        android:layout_marginEnd="92dp"
+        android:layout_marginBottom="124dp"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

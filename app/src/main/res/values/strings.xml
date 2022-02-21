@@ -20,6 +20,10 @@
     <string name="url_name">URL Name</string>
     <string name="locationBtn">Get Location</string>
     <string name="NULogo">NU Logo</string>
+    <string name="locationDisplayBox">locationDisplayView</string>
+    <string name="Latitude">Latitude</string>
+    <string name="Longitude">Longitude</string>
+
 
 
 </resources>

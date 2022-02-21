@@ -1,19 +1,12 @@
 package edu.neu.madcourse.numad22sp_saurabhgade;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
+import com.google.android.gms.location.LocationRequest;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import edu.neu.madcourse.numad22sp_saurabhgade.adapter.RecyclerViewAdapter;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
     private Button clickyBtn;
     private Button linkCollectorBtn;
     private Button locationBtn;
-
+    private LocationRequest locationRequest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +25,12 @@ public class MainActivity extends AppCompatActivity {
         clickyBtn = findViewById(R.id.clickyBtn);
         linkCollectorBtn = findViewById(R.id.linkBtn);
         locationBtn = findViewById(R.id.locationBtn);
+
+        locationRequest = LocationRequest.create();
+        locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+        locationRequest.setInterval(5000);
+        locationRequest.setFastestInterval(2000);
+
 
         //urlMap = new HashMap<>();
 
@@ -67,9 +66,16 @@ public class MainActivity extends AppCompatActivity {
         locationBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //getCurrentLocation();
                 goToLocationActivity(v);
             }
         });
+    }
+
+
+    public void setActivityBackgroundColor(int color) {
+        View view = this.getWindow().getDecorView();
+        view.setBackgroundColor(color);
     }
 
     public void goToGridActivity(View view) {

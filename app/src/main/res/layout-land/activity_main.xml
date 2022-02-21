@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bgColor"
     tools:context=".MainActivity">
 
     <TextView
@@ -12,6 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
         android:text="@string/helloWorld"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/linkBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -24,6 +26,7 @@
         android:layout_marginEnd="310dp"
         android:layout_marginBottom="32dp"
         android:text="@string/aboutMe"
+        android:textColor="@color/textColor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -44,6 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="28dp"
         android:text="@string/clicky"
+        android:textColor="@color/textColor"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.499"
@@ -55,6 +59,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:text="@string/linkCollectorBtnText"
+        android:textColor="@color/textColor"
         app:layout_constraintBottom_toTopOf="@+id/clickyBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.499"
