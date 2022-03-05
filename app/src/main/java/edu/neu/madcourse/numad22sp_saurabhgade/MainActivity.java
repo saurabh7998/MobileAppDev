@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     private Button linkCollectorBtn;
     private Button locationBtn;
     private LocationRequest locationRequest;
+    private Button apiBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
         locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
         locationRequest.setInterval(5000);
         locationRequest.setFastestInterval(2000);
+
+        apiBtn = findViewById(R.id.apiBtn);
 
 
         //urlMap = new HashMap<>();
@@ -70,6 +73,13 @@ public class MainActivity extends AppCompatActivity {
                 goToLocationActivity(v);
             }
         });
+
+        apiBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToApiActivity(v);
+            }
+        });
     }
 
 
@@ -95,6 +105,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void goToLocationActivity(View view) {
         Intent intent = new Intent(this, LocationActivity.class);
+        startActivity(intent);
+    }
+
+    public void goToApiActivity(View view){
+        Intent intent = new Intent(this, ApiActivity.class);
         startActivity(intent);
     }
 }

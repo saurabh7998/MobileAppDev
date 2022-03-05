@@ -23,6 +23,7 @@
     <string name="locationDisplayBox">locationDisplayView</string>
     <string name="Latitude">Latitude</string>
     <string name="Longitude">Longitude</string>
+    <string name="Api">Connect to API</string>
 
 
 
