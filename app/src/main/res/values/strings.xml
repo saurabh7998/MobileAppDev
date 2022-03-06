@@ -24,6 +24,7 @@
     <string name="Latitude">Latitude</string>
     <string name="Longitude">Longitude</string>
     <string name="Api">Connect to API</string>
+    <string name="movie_name">Enter Movie Name</string>
 
 
 
