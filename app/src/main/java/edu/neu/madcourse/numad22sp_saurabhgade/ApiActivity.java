@@ -76,8 +76,7 @@ public class ApiActivity extends AppCompatActivity {
 
 
     private void connectToApiOnNewThread() {
-
-
+        errorView.setText("");
         if (editTextMovie.getText() == null || editTextMovie.getText().toString().equals("")) {
             errorView.setText("Please select valid options for the request");
             return;
@@ -119,6 +118,7 @@ public class ApiActivity extends AppCompatActivity {
 
                     if (status > 299) {
                         bufferedReader = new BufferedReader(new InputStreamReader(conn.getErrorStream()));
+                        errorView.setText("No Response found");
                     } else {
                         bufferedReader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
                         System.out.println();
@@ -162,6 +162,7 @@ public class ApiActivity extends AppCompatActivity {
 
                             } catch (JSONException e) {
                                 e.printStackTrace();
+                                errorView.setText("No response found! Please check input");
                             }
                         }
                     });
