@@ -77,6 +77,7 @@ public class ApiActivity extends AppCompatActivity {
 
     private void connectToApiOnNewThread() {
         errorView.setText("");
+
         if (editTextMovie.getText() == null || editTextMovie.getText().toString().equals("")) {
             errorView.setText("Please select valid options for the request");
             return;
@@ -163,6 +164,11 @@ public class ApiActivity extends AppCompatActivity {
                             } catch (JSONException e) {
                                 e.printStackTrace();
                                 errorView.setText("No response found! Please check input");
+                                editTextMovie.setText("");
+                                imdbView.setText("");
+                                yearView.setText("");
+                                genreView.setText("");
+                                imageView.setImageBitmap(null);
                             }
                         }
                     });
